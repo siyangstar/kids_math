@@ -1,20 +1,86 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# 数学冒险：小小天才
 
-# Run and deploy your AI Studio app
+一个专为儿童设计的趣味数学练习应用，通过游戏化的方式帮助孩子提升计算能力，让数学学习变得轻松有趣！
 
-This contains everything you need to run your app locally.
+![React](https://img.shields.io/badge/React-19.2.4-61DAFB?logo=react)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.8.2-3178C6?logo=typescript)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-4.2.1-38B2AC?logo=tailwind-css)
+![Vite](https://img.shields.io/badge/Vite-6.2.0-646CFF?logo=vite)
 
-View your app in AI Studio: https://ai.studio/apps/7d8b0121-57d3-44ad-9fde-35f4fa8d9916
+## ✨ 功能特色
 
-## Run Locally
+- **多种运算模式**：支持加法、减法、乘法、除法，可自由组合练习
+- **智能难度设置**：为不同运算设置独立的数字范围
+- **进阶题目类型**：支持2-3个数字的混合运算，可启用括号优先级练习
+- **徽章奖励系统**：通过连续答对题目解锁成就徽章
+- **数据持久化**：自动保存学习进度和统计数据
+- **精美动画效果**：庆祝动画让学习更有成就感
 
-**Prerequisites:**  Node.js
+## 🎯 徽章系统
+
+| 徽章 | 名称       | 解锁条件    |
+| ---- | ---------- | ----------- |
+| ⭐   | 初学者     | 答对 5 题   |
+| ⚡   | 火力全开   | 答对 10 题  |
+| 👑   | 数学大师   | 答对 50 题  |
+| 🏆   | 神射手     | 答对 100 题 |
+| ❤️   | 数学爱好者 | 答对 200 题 |
 
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## 📁 项目结构
+
+```
+kids_math/
+├── components/          # React 组件
+│   ├── AITutor.tsx     # AI 辅导组件
+│   ├── Keypad.tsx      # 数字键盘
+│   ├── LabubuMascot.tsx # 吉祥物组件
+│   └── SettingsPanel.tsx # 设置面板
+├── services/           # 业务逻辑
+│   └── mathGenerator.ts # 数学题生成器
+├── types.ts            # TypeScript 类型定义
+├── constants.ts        # 常量配置
+├── App.tsx             # 主应用组件
+├── index.tsx           # 应用入口
+└── index.css           # 全局样式
+```
+
+## 🎮 使用指南
+
+1. **首页**: 点击"开始挑战"进入练习模式
+2. **练习模式**:
+   - 使用数字键盘输入答案
+   - 连续答对后会播放庆祝动画
+3. **设置面板**:
+   - 自定义运算类型和难度
+   - 调整数字范围和题目数量
+   - 开启高级选项（括号、借位等）
+4. **奖励页面**: 查看已获得的徽章和学习进度
+
+## 🔧 配置选项
+
+| 选项          | 说明                         | 默认值 |
+| ------------- | ---------------------------- | ------ |
+| 运算类型      | 选择加法、减法、乘法、除法   | 加法   |
+| 加法范围      | 控制加法题目的和的范围       | 1-20   |
+| 减法范围      | 控制减法题目的被减数范围     | 1-20   |
+| 乘法范围      | 控制乘法题目的因数范围       | 2-9    |
+| 除法范围      | 控制除法题目的除数和商范围   | 2-9    |
+| 题目数量      | 每轮练习的题目数量           | 20     |
+| 数字个数      | 每题的数字数量（2个或3个）   | 2      |
+| 允许借位/进位 | 是否允许需要借位或进位的题目 | 开启   |
+| 允许负数      | 减法是否允许负数结果         | 关闭   |
+| 允许余数      | 除法是否允许有余数           | 关闭   |
+| 允许括号      | 3个数字时是否使用括号        | 关闭   |
+
+## 📝 开发计划
+
+- [ ] 添加更多趣味徽章
+- [ ] 支持题目历史记录回顾
+- [ ] 添加计时挑战模式
+- [ ] 支持多用户配置切换
+- [ ] 添加家长监控面板
+
+---
+
+Made with ❤️ for little math geniuses!
