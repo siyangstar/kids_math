@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@theme {
+  --font-fredoka: "Fredoka", sans-serif;
+}
+
+body {
+  font-family: var(--font-fredoka);
+  background-color: #f0f9ff;
+}
+
+.blob {
+  position: absolute;
+  filter: blur(40px);
+  z-index: -1;
+  opacity: 0.5;
+  animation: move 10s infinite alternate;
+}
+
+@keyframes move {
+  from { transform: translate(0, 0) scale(1); }
+  to { transform: translate(20px, -20px) scale(1.1); }
+}
